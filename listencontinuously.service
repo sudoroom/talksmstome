@@ -1,1 +1,12 @@
-/etc/systemd/system/listencontinuously.service
+[Unit]
+Description=listen on port 28386 for SMS and talk it
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/ashby/bin/listencontinuously.sh
+Restart=always
+User=ashby
+
+[Install]
+WantedBy=multi-user.target
